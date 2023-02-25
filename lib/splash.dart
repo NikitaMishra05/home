@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home/signin.dart';
+import 'package:home/welcome.dart';
 
 class Splash extends StatefulWidget{
   @override
@@ -17,16 +18,16 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
    return Scaffold(
 
-backgroundColor: Colors.blue,
+backgroundColor: Colors.white,
      body: Container(
        alignment: Alignment.center,
        child: Column(
 
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
-           Image.asset("assets/icon.png",
-             height: 100,
-             width: 100,
+           Image.asset("assets/flight.png",
+             height: 150,
+             width: 150,
 
            ),
          ],
@@ -38,7 +39,7 @@ backgroundColor: Colors.blue,
   }
   void nextScreen(){
     Future.delayed(Duration(seconds: 2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Signin()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Welcome()));
     });
   }
 }

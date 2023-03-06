@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:home/signin.dart';
+
 import 'package:home/welcome.dart';
 
 class Splash extends StatefulWidget{
@@ -18,7 +18,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
    return Scaffold(
 
-backgroundColor: Colors.white,
+backgroundColor: Color(0xff6082B6),
      body: Container(
        alignment: Alignment.center,
        child: Column(

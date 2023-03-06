@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:home/signin.dart';
 
 class Welcome extends StatefulWidget{
   @override
@@ -44,19 +45,23 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 50,
-                    width: 120,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(35))
+                  InkWell( onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Signin()));
+                  },
+                    child: Container(
+                      height: 50,
+                      width: 120,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(35))
 
-                    ),
-                    child: Text("Sign In",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
+                      ),
+                      child: Text("Sign In",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
                     ),
                   ),
                   Container(

@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home/firebase_options.dart';
-import 'package:home/signin.dart';
 import 'package:home/splash.dart';
 
 void main() async{

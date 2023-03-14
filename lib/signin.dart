@@ -87,21 +87,59 @@ class _SigninState extends State<Signin> {
             ),
             Padding(
               padding: const EdgeInsets.all(20),
-              child: Container(
-                height: 45,
-                width: 120,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
-                child: Text("Sign In",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold
+              child: InkWell(
+                onTap: (){
+                    if(username_controller.value.text.isEmpty || password_controller.value.text.isEmpty){
+                      final snackBar=SnackBar(content: const Text("Fields cannot be empty"),
+                      action: SnackBarAction(
+                        label: "Undo",
+                        onPressed: (){},
+                      ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                    }
+                    else if(password_controller.value.text.length < 8){
+                      final snackBar= SnackBar(content: const Text('Password cannot be less then 8'),
+                      action: SnackBarAction(
+                        label: 'Undo',
+                      onPressed: (){},
+                      ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                    }
+                  else if(!username_controller.value.text.endsWith('@gmail.com')){
+                          final snackBar= SnackBar(content: const Text("Invalid Email"),
+                          action: SnackBarAction(
+                            label: "Undo",
+                            onPressed: (){},
+                          ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
+                  else{
+
+                    }
+
+                },
+
+                child: Container(
+                  height: 45,
+                  width: 120,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.all(Radius.circular(20))
                   ),
-                )
+                  child: Text("Sign In",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold
+                    ),
+                  )
+                ),
               ),
             ),
           ],
@@ -112,4 +150,6 @@ class _SigninState extends State<Signin> {
 
     );
   }
+  
+
 }
